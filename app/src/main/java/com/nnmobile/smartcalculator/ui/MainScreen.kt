@@ -51,7 +51,14 @@ fun MainScreen(
                 Button(
                     modifier = Modifier.padding(4.dp),
                     colors = ButtonDefaults.buttonColors(backgroundColor = if(index<10) Color.Gray else Color.Blue),
-                    onClick = {}
+                    onClick = {
+                        when(index){
+                            19 -> calculator.calculateEQ()
+                            18 -> calculator.removeFromEQ()
+                            17 -> calculator.clearEQ()
+                            else -> calculator.input(item)
+                        }
+                    }
                 ) {
                     Text(
                         text = item,
